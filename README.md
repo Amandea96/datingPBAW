@@ -14,4 +14,4 @@
 
 
 
-> w laravel blade
+> w laravel blade etsdyfghlj
