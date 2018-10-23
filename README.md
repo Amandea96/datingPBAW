@@ -1,6 +1,8 @@
 # datingPBAW
- Jest to aplikacja polegająca na portalu randkowym. Poprzez rejestrację możliwe jest utworzenia konta, które będzie stanowić 
- dużą więdzę o użytkownikach i o ich zainteresowaniach.
+ Projekt jest serwisem randkowym, działającym podobnie do facebooka, lecz skupiającym się na poszukiwaniu partnera życiowego.
+ Ważnym aspektem strony jest personalizacja swojego konta poprzez dodawanie licznych postów i opisów, jak i rozmowa ze znajomymi.
+ 
+
 
 ## Każdy użytkownik ma dostęp do:
 - strony głównej,
@@ -30,4 +32,4 @@
 - PHP 
 - Framework Laravel
 
-> w laravel blade
+> w laravel blade, carbon, date
