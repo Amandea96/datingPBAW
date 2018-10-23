@@ -26,5 +26,8 @@
 - msg (sender, receiver, id_msg, date_msg, message),
 
 
+## Wykorzystane technologie:
+- PHP 
+- Framework Laravel
 
 > w laravel blade
