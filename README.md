@@ -1,5 +1,5 @@
 # datingPBAW
- Poprzez rejestrację możliwe jest utworzenia konta, które będzie stanowić 
+ Jest to aplikacja polegająca na portalu randkowym. Poprzez rejestrację możliwe jest utworzenia konta, które będzie stanowić 
  dużą więdzę o użytkownikach i o ich zainteresowaniach.
 
 ## Każdy użytkownik ma dostęp do:
