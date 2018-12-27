@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Contact - Twenty by HTML5 UP</title>
+		<title>@yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link href="{{asset('css/main.css')}}" rel="stylesheet" />
@@ -28,12 +28,53 @@
 					<nav id="nav">
 						<ul>
 							@yield('navigation')
+							@guest
 							
-							{if count($conf->roles)>0}
+							@if (session('status'))
+                        
+                   
+					@else
+                            <li class="nav-item">
+                                <a class="button primary" href="{{ route('login') }}">{{ __('Zaloguj') }}</a>
+                            </li>
+							
+							 @endif
+                            <li class="nav-item">
+                                @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                            </li>
+                        @else
+							
+						<li class="submenu ">
+								<a href="#">{{ Auth::user()->name }}</a>
+								<ul>
+								<li><a href="{$conf->action_root}myaccountShow">Profil</a></li>
+									<li><a href="{{ route('personEdit') }}">Edytuj</a></li>
+									<li><a href="{$conf->action_root}friendList">Znajomi</a></li>
+									<li><a href="{$conf->action_root}feaShow">Cechy</a></li>
+									<li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a></li>
+								
+									
+									</ul>
+							</li>
+                            
+
+                             
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+							</li>
+							<!--{if count($conf->roles)>0}
 							<li><a href="{$conf->action_root}logout" class="button primary">Wyloguj</a></li>
 							{else}	
 							<li><a href="{$conf->action_root}loginShow" class="button primary">Zaloguj</a></li>
-							{/if}
+							{/if}-->
 						</ul>
 					</nav>
 				</header>
@@ -104,15 +145,15 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="{$conf->app_url}/js/jquery.min.js"></script>
-			<script src="{$conf->app_url}/js/jquery.dropotron.min.js"></script>
-			<script src="{$conf->app_url}/js/jquery.scrolly.min.js"></script>
-			<script src="{$conf->app_url}/js/jquery.scrollgress.min.js"></script>
-			<script src="{$conf->app_url}/js/jquery.scrollex.min.js"></script>
-			<script src="{$conf->app_url}/js/browser.min.js"></script>
-			<script src="{$conf->app_url}/js/breakpoints.min.js"></script>
-			<script src="{$conf->app_url}/js/util.js"></script>
-			<script src="{$conf->app_url}/js/main.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.dropotron.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/js/jquery.scrollgress.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
 
 	</body>
 </html>
