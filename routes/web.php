@@ -11,13 +11,27 @@
 |
 */
 
-Route::get('/users', function () {
-    return view('users');
-});
+//Route::get('/users', function () {
+ //   return view('users');
+//});
+Route::get('/listUsers',[
+'uses'=>'listPersonCtrl@show',
+'as'=>'listPerson.show']);
 
 
-Route::get('/profile', 'PersonListCtrl@show')->name('users');
-Route::view('/home', 'welcome');
+Route::get('/edit',[
+'uses'=>'RegisterController@create',
+'as'=>'personEdit']);
+
+Route::get('/account',[
+'uses'=>'listPersonCtrl@account',
+'as'=>'accountShow']);
+//Route::post('/users','listPersonCtrl@add');
+
+
+//Route::get('/profile', 'PersonListCtrl@show')->name('users');
+Route::view('/homePage', 'welcome');
+//Route::view('/listUsers', 'users');
 
 Route::get('/', function () {
     return view('welcome');
@@ -26,3 +40,7 @@ Route::get('/', function () {
 {
     return 'Users!';
 });*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
